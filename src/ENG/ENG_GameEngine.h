@@ -19,6 +19,10 @@ class ENG_GameEngine
        void                      init();
        void                      update();
        void                      cleanup();
+
+    protected:
+
+    private:
 }
 
 #endif
