@@ -25,6 +25,6 @@ class CTRY_GreatBritain:public CTRY_Base
             
             //static instance
             static CTRY_GreatBritain*   classInstance;
-}
+};
 
 #endif

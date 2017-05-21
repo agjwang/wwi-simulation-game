@@ -26,6 +26,6 @@ class CTRY_France:public CTRY_Base
             
             //static instance of class 
             static CTRY_France*         classInstance;
-}
+};
 
 #endif

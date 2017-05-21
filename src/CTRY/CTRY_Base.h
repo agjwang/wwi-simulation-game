@@ -20,20 +20,21 @@ class CTRY_Base
         int                     getGold();
         int                     getPopulation();
         int                     getLandSize();
-        int                     getResources();
+        int                     getGrain();
+        bool                    getCoutryIsAtWar();
 
         void                    setGold(int newGold);
         void                    setPopulation(int newPopulation);
         void                    setLandSize(int newLandSize);
-        void                    setResources(int newResources);
+        void                    setGrain(int newGrain);
+        void                    setCountryState();
 
     protected:
         int gold;
         int population;
         int landSize;
-        int resources;
-    
-    private:
+        int grain;
+        bool isAtWar;
 };
 
 #endif
