@@ -7,13 +7,17 @@
 #ifndef __ENG_Timer_h__
 #define __ENG_Timer_h__
 
-class ENG_GameEngine
+class Timer
 {
     public:
         
+        // Class constructor and destructor
+                                 Timer();
+        virtual                 ~Timer();
+
         // Updates the timer's internal accumulated and elapsed time
         // Called within the main game loop
-        void                     updateTimer();
+        void                     updateTime();
 
         // Returns true if game loop needs to update or render, false otherwise
         // If true, methods will update accumulatedTime/elapsedTime
@@ -27,6 +31,9 @@ class ENG_GameEngine
         // Constants for updates per second and frames per second
         const int                UPS = 30;
         const int                FPS = 30;
+
+        // bool for whether VSync is enabled
+        bool                     isVSync;
 
         // Internal variables to track time changes/accumulation
         double                   accumulatedTime;

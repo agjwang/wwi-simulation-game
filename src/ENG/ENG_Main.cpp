@@ -1,7 +1,7 @@
 /*
  * NAME: ENG_Main.cpp
  *
- * COMMENTS: Main method for point of entry
+ * COMMENTS: Main function for point of entry
  */
 
 #include "ENG_MainGameLoop.h"
