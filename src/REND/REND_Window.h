@@ -9,6 +9,9 @@
 
 #include <iosfwd>
 
+#include <GLFW/glfw3.h>
+#include <GL/glew.h>
+
 class Window
 {
 
@@ -23,21 +26,22 @@ class Window
         // Methods to set up and update window
         void                     init();
 
-        void                     update();
-
-        void                     cleanup();
-
-        bool                     isWindowCloseRequested(); 
-
+        GLFWwindow              *getWindowHandle()
+                                { return windowHandle; };
+        
     protected:
 
     private:
 
-        string                  title;
-        int                     width;
-        int                     height;
-        bool                    vSync;
+        string                   title;
+        int                      width;
+        int                      height;
 
+        int                      screenWidth;
+        int                      screenHeight;
+
+        bool                     vSync;
+        GLFWwindow              *windowHandle;
 }
 
 #endif

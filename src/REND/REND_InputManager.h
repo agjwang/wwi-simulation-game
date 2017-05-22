@@ -28,7 +28,8 @@ class InputManager
     protected:
 
     private:
-
+        
+        GLFWwindow              *windowHandle;
 }
 
 #endif

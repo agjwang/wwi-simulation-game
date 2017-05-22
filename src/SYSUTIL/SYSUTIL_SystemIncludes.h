@@ -17,6 +17,8 @@ using namespace std::string;
 
 // OpenGL libraries and extensions
 
+#include <GLFW/glfw3.h>
+#include <GL/glew.h>
 
 // External math libraries
 

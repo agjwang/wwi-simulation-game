@@ -30,7 +30,7 @@ class DisplayManager
         void                     cleanup();
 
         bool                     isCloseRequested()
-                                 { return window.isWindowCloseRequested() };
+                                 { return window.isWindowCloseRequested(); };
 
     protected:
 
