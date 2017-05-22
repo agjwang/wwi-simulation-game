@@ -8,6 +8,9 @@
 #define __REND_DisplayManager_h__
 
 #include "REND_Window.h"
+#include "REND_InputManager.h"
+
+#include <iosfwd>
 
 class DisplayManager
 {
@@ -15,7 +18,8 @@ class DisplayManager
     public:
 
         // Class constructor and destructor
-                                 DisplayManager();
+                                 DisplayManager(string title, int width,
+                                         int height, bool vSync);
         virtual                 ~DisplayManager();
 
         // Methods to set up and update display manager
@@ -31,6 +35,7 @@ class DisplayManager
     private:
     
         Window                  window;
+        InputManager            input;
 
 }
 

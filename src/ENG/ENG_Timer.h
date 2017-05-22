@@ -7,6 +7,11 @@
 #ifndef __ENG_Timer_h__
 #define __ENG_Timer_h__
 
+#include <chrono>
+#include <iosfwd>
+
+using namespace std::chrono;
+
 class Timer
 {
     public:
@@ -28,6 +33,8 @@ class Timer
 
     private:
         
+        double                   getElapsedTime();
+
         // Constants for updates per second and frames per second
         const int                UPS = 30;
         const int                FPS = 30;
@@ -38,6 +45,10 @@ class Timer
         // Internal variables to track time changes/accumulation
         double                   accumulatedTime;
         double                   elapsedTime;
+        
+        time_point<system_clock> prevLoopTime;
+        time_point<system_clock> currLoopTime;
+        
 }
 
 #endif

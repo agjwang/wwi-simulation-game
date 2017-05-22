@@ -15,7 +15,7 @@ class InputManager
     public:
 
         // Class constructor and destructor
-                                 InputManager();
+                                 InputManager(Window window);
         virtual                 ~InputManager();
 
         void                     init();
