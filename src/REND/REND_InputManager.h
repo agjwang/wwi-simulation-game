@@ -18,9 +18,12 @@ class InputManager
                                  InputManager(Window window);
         virtual                 ~InputManager();
 
+        // Methods to set up and update input manager
         void                     init();
         
         void                     update();
+
+        void                     cleanup();
 
     protected:
 

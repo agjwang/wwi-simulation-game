@@ -26,6 +26,8 @@ class DisplayManager
         void                     init();
 
         void                     update();
+        
+        void                     cleanup();
 
         bool                     isCloseRequested()
                                  { return window.isWindowCloseRequested() };

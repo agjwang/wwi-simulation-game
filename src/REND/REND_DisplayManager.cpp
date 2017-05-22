@@ -25,3 +25,9 @@ void DisplayManager::update()
     input.update();
     window.update();
 }
+
+void DisplayManager::cleanup()
+{
+    input.cleanup();
+    window.cleanup();
+}

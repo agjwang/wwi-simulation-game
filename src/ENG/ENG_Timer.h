@@ -26,8 +26,8 @@ class Timer
 
         // Returns true if game loop needs to update or render, false otherwise
         // If true, methods will update accumulatedTime/elapsedTime
-        bool                     isUpdateTime();
-        bool                     isRenderTime();
+        bool                     getIsUpdateTime();
+        bool                     getIsRenderTime();
 
     protected:
 
@@ -37,10 +37,10 @@ class Timer
 
         // Constants for updates per second and frames per second
         const int                UPS = 30;
-        const int                FPS = 30;
+        double                   updateInterval;
 
-        // bool for whether VSync is enabled
-        bool                     isVSync;
+        // Flag for when it is time to render
+        bool                     isRenderTime;
 
         // Internal variables to track time changes/accumulation
         double                   accumulatedTime;

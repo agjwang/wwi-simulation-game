@@ -25,6 +25,8 @@ class Window
 
         void                     update();
 
+        void                     cleanup();
+
         bool                     isWindowCloseRequested(); 
 
     protected:

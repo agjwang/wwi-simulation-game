@@ -4,7 +4,8 @@
  * COMMENTS:
  */
 
-Timer::Timer() : accumulatedTime(0.0), elapsedTime(0.0)
+Timer::Timer() : accumulatedTime(0.0), elapsedTime(0.0),
+    updateInterval(1.0 / UPS), isRenderTime(false)
 {
     prevLoopTime = system_clock::now();
     currLoopTime = system_clock::now();
@@ -17,17 +18,27 @@ Timer::~Timer()
 void Timer::updateTime()
 {
     elapsedTime = getElapsedTime();
-    accumulatedTime += elapsedTime();
-
+    accumulatedTime += elapsedTime;
 }
 
-bool Timer::isUpdateTime()
+bool Timer::getIsUpdateTime()
 {
+    if (accumulatedTime >= updateInterval)
+    {
+        accumulatedTime -= updateInterval;
+        return true;
+    }
+    isRenderTime = true;
     return false;
 }
 
-bool Timer::isRenderTime()
+bool Timer::getIsRenderTime()
 {
+    if (isRenderTime)
+    {
+        isRenderTime = false;
+        return true;
+    }
     return false;
 }
 
