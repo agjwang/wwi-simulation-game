@@ -1,14 +1,14 @@
-OBJS = REND_Main.cpp REND_DisplayManager.cpp REND_InputManager.cpp REND_Window.cpp  
+OBJS = REND_Main.cpp REND_DisplayManager.cpp REND_Window.cpp REND_InputManager.cpp 
 
 CC = g++
 
-INCLUDE_PATHS = -l/usr/local/include -l/opt/X11/include
+INCLUDE_PATHS = -I/usr/local/include -I/opt/X11/include
 
-LIBRARY_PATHS = -L/usr/local/lib -
+LIBRARY_PATHS = -L/usr/local/lib -I/opt/X11/lib
 
 COMPILER_FLAGS = -w
 
-LINKER_FLAGS = -framework OpenGL -lglfw3 -lglew
+LINKER_FLAGS = -framework OpenGL -lglfw -lglew
 
 OBJ_NAME = rendtest
 

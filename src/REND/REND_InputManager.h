@@ -7,6 +7,8 @@
 #ifndef __REND_InputManager_h__
 #define __REND_InputManager_h__
 
+#include "../SYSUTIL/SYSUTIL_SystemIncludes.h"
+
 #include "REND_Window.h"
 
 class InputManager
@@ -30,6 +32,6 @@ class InputManager
     private:
         
         GLFWwindow              *windowHandle;
-}
+};
 
 #endif

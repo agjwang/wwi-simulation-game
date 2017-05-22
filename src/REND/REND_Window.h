@@ -7,10 +7,10 @@
 #ifndef __REND_Window_h__
 #define __REND_Window_h__
 
-#include <iosfwd>
-
-#include <GLFW/glfw3.h>
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include "../SYSUTIL/SYSUTIL_SystemIncludes.h"
 
 class Window
 {
@@ -25,9 +25,14 @@ class Window
 
         // Methods to set up and update window
         void                     init();
+        
+        void                     update();
+
+        bool                     isWindowCloseRequested()
+                                    { return glfwWindowShouldClose(windowHandle); };
 
         GLFWwindow              *getWindowHandle()
-                                { return windowHandle; };
+                                    { return windowHandle; };
         
     protected:
 
@@ -42,6 +47,6 @@ class Window
 
         bool                     vSync;
         GLFWwindow              *windowHandle;
-}
+};
 
 #endif

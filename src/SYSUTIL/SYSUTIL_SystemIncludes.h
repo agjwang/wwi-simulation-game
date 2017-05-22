@@ -7,9 +7,6 @@
 #ifndef __SYSUTIL_SystemIncludes_h__
 #define __SYSUTIL_SystemIncludes_h__
 
-// Import std::string namespace so strings don't need to be declared std::string
-using namespace std::string;
-
 // c++ standard libraries
 #include <iostream>
 #include <vector>
@@ -17,9 +14,12 @@ using namespace std::string;
 
 // OpenGL libraries and extensions
 
-#include <GLFW/glfw3.h>
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 // External math libraries
+
+// Import std::string namespace so strings don't need to be declared std::string
+using std::string;
 
 #endif

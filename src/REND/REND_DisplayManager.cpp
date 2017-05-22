@@ -4,10 +4,12 @@
  * COMMENTS:
  */
 
+#include "REND_DisplayManager.h"
+
 DisplayManager::DisplayManager(string title, int width, int height, bool vSync)
-    : window(new Window(title, width, height, vSync),
-      input(new InputManager(window))
+    : window(new Window(title, width, height, vSync))
 {
+    input = new InputManager(*window);
 }
 
 DisplayManager::~DisplayManager()
@@ -16,18 +18,18 @@ DisplayManager::~DisplayManager()
 
 void DisplayManager::init()
 {
-    input.init();
-    window.init();
+    input->init();
+    window->init();
 }
 
 void DisplayManager::update()
 {
-    input.update();
-    window.update();
+    input->update();
+    window->update();
 }
 
 void DisplayManager::cleanup()
 {
-    input.cleanup();
-    window.cleanup();
+    input->cleanup();
+    //window.cleanup();
 }

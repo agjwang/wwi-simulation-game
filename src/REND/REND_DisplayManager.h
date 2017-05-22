@@ -7,10 +7,11 @@
 #ifndef __REND_DisplayManager_h__
 #define __REND_DisplayManager_h__
 
+#include "../SYSUTIL/SYSUTIL_SystemIncludes.h"
+
 #include "REND_Window.h"
 #include "REND_InputManager.h"
 
-#include <iosfwd>
 
 class DisplayManager
 {
@@ -30,15 +31,15 @@ class DisplayManager
         void                     cleanup();
 
         bool                     isCloseRequested()
-                                 { return window.isWindowCloseRequested(); };
+                                     { return window->isWindowCloseRequested(); };
 
     protected:
 
     private:
     
-        Window                  window;
-        InputManager            input;
+        Window                  *window;
+        InputManager            *input;
 
-}
+};
 
 #endif

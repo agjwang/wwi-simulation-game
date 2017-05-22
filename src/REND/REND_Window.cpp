@@ -26,18 +26,27 @@ void Window::init()
     glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    windowHandle = glfwCreateWindow(width, height, title, NULL, NULL);
+    windowHandle = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
 
     glfwMakeContextCurrent(windowHandle);
-    glfwGetFrameBufferSize(windowHandle, &screenWidth, &screenHeight);
+    glfwGetFramebufferSize(windowHandle, &screenWidth, &screenHeight);
     
     glewExperimental = GL_TRUE;
     glewInit();
 
 
     glViewport(0, 0, screenWidth, screenHeight);
-    glEnable(GL_Depth_TEST);
+    glEnable(GL_DEPTH_TEST);
 
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
+void Window::update()
+{
+    while (!isWindowCloseRequested())
+    {
+        glfwSwapBuffers(windowHandle);
+        glfwPollEvents();
+    }
 }
