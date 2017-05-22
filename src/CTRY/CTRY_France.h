@@ -21,8 +21,8 @@ class CTRY_France:public CTRY_Base
         private:
             //Private constructor
                                         CTRY_France();
-                                        CTRY_France(CTRY_France const&);
-            void                        operator=(CTRY_France const&);
+                                        CTRY_France(CTRY_France const&){};
+            void                        operator=(CTRY_France const&){};
             
             //static instance of class 
             static CTRY_France*         classInstance;
