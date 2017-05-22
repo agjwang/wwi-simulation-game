@@ -1,5 +1,5 @@
 /*
- * NAME: ENG_Timer.h
+ * NAME: ENG_Timer.cpp
  *
  * COMMENTS:
  */
