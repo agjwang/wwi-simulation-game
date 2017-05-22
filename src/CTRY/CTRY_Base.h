@@ -12,22 +12,25 @@ class CTRY_Base
 {
     public:
 
-        // Class constructor and destructor
-                                CTRY_Base();
-        virtual                ~CTRY_Base();
-
         // Class getter and setter methods
         int                     getGold();
         int                     getPopulation();
         int                     getLandSize();
         int                     getGrain();
-        bool                    getCoutryIsAtWar();
+        bool                    getCountryIsAtWar();
 
         void                    setGold(int newGold);
         void                    setPopulation(int newPopulation);
         void                    setLandSize(int newLandSize);
         void                    setGrain(int newGrain);
-        void                    setCountryState();
+        void                    setCounntryIsAtWar(bool newState);
+
+        // Change parameter functions
+        // Returns true if successful and false without changing parameters if failed
+        bool                    changeGold(int change);
+        bool                    changePopulation(int change);
+        bool                    changeLandSize(int change);
+        bool                    changeGrain(int change);
 
     protected:
         int gold;
@@ -35,6 +38,12 @@ class CTRY_Base
         int landSize;
         int grain;
         bool isAtWar;
+    
+    private:
+
+        // Class constructor and destructor
+                                CTRY_Base();
+        virtual                ~CTRY_Base();
 };
 
 #endif

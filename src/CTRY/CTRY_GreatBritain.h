@@ -20,8 +20,8 @@ class CTRY_GreatBritain:public CTRY_Base
         private:
             //Private constructor
                                         CTRY_GreatBritain();
-                                        CTRY_GreatBritain(CTRY_GreatBritain const&);
-            void                        operator=(CTRY_GreatBritain const&);
+                                        CTRY_GreatBritain(CTRY_GreatBritain const&){};
+            void                        operator=(CTRY_GreatBritain const&){};
             
             //static instance
             static CTRY_GreatBritain*   classInstance;
