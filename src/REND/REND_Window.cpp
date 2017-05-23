@@ -44,9 +44,6 @@ void Window::init()
 
 void Window::update()
 {
-    while (!isWindowCloseRequested())
-    {
-        glfwSwapBuffers(windowHandle);
-        glfwPollEvents();
-    }
+    glfwSwapBuffers(windowHandle);
+    glfwPollEvents();
 }
