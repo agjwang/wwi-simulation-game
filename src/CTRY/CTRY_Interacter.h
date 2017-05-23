@@ -11,6 +11,8 @@
 #ifndef __CTRY_Interacter_h__
 #define __CTRY_Interacter_h__
 
+#include "CTRY_Base.h"
+
 enum Country
 {
         GREAT_BRITAIN,
@@ -41,7 +43,10 @@ class CTRY_Interacter
             //Returns bool true/false= success/failed operation
             bool                updateCountryResources(Country country, 
                                                       CountryChangeResources changeResources);
-            bool                updateCountryState(bool isAtWar);
+            bool                updateCountryState(Country country, bool isAtWar);
+
+        private:
+            CTRY_Base&          getChangedCountry(Country country);
 };
 
 #endif

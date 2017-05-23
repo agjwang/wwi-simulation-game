@@ -23,7 +23,7 @@ class CTRY_Base
         void                    setPopulation(int newPopulation);
         void                    setLandSize(int newLandSize);
         void                    setGrain(int newGrain);
-        void                    setCounntryIsAtWar(bool newState);
+        void                    setCountryIsAtWar(bool newState);
 
         // Change parameter functions
         // Returns true if successful and false without changing parameters if failed
@@ -32,14 +32,13 @@ class CTRY_Base
         bool                    changeLandSize(int change);
         bool                    changeGrain(int change);
 
-    protected:
+    private:
+
         int gold;
         int population;
         int landSize;
         int grain;
         bool isAtWar;
-    
-    private:
 
         // Class constructor and destructor
                                 CTRY_Base();

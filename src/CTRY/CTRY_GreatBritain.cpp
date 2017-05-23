@@ -12,8 +12,7 @@ CTRY_GreatBritain& CTRY_GreatBritain::getInstance()
     if (!classInstance){
         classInstance = new CTRY_GreatBritain();
         return &classInstance;
-    }
-    else{
+    } else{
         return &classInstance;
     }
 }
@@ -29,9 +28,5 @@ CTRY_GreatBritain::CTRY_GreatBritain()
 
 CTRY_GreatBritain::~CTRY_GreatBritain()
 {
-    gold = 0;
-    population = 0;
-    landSize = 0;
-    grain = 0;
-    isAtWar = false;
+
 }

@@ -12,8 +12,7 @@ CTRY_France& CTRY_France::getInstance()
     if (!classInstance){
         classInstance = new CTRY_France();
         return &classInstance;
-    }
-    else{
+    } else{
         return &classInstance;
     }
 }
@@ -29,9 +28,5 @@ CTRY_France::CTRY_France()
 
 CTRY_France::~CTRY_France()
 {
-    gold = 0;
-    population = 0;
-    landSize = 0;
-    grain = 0;
-    isAtWar = false;
+
 }

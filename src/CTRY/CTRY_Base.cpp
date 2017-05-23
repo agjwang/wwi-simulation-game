@@ -62,8 +62,7 @@ bool CTRY_Base::changeGold(int change)
     if (gold+change >= 0){
         gold += change;
         return true;
-    }
-    else{
+    } else{
         return false;
     }
 }
@@ -73,8 +72,7 @@ bool CTRY_Base::changePopulation(int change)
     if (population+change >= 0){
         population += change;
         return true;
-    }
-    else{
+    } else{
         return false;
     }
 }
@@ -84,8 +82,7 @@ bool CTRY_Base::changeLandSize(int change)
     if (landSize+change >= 0){
         landSize += change;
         return true;
-    }
-    else{
+    } else{
         return false;
     }
 }
@@ -95,8 +92,7 @@ bool CTRY_Base::changeGrain(int change)
     if (grain+change >= 0){
         grain += change;
         return true;
-    }
-    else{
+    } else{
         return false;
     }
 }
@@ -112,9 +108,5 @@ CTRY_Base::CTRY_Base()
 
 CTRY_Base::~CTRY_Base()
 {
-    gold = 0;
-    population = 0;
-    landSize = 0;
-    grain = 0;
-    isAtWar = false;
+
 }
