@@ -32,7 +32,9 @@ class CTRY_Base
         bool                    changeLandSize(int change);
         bool                    changeGrain(int change);
 
-    private:
+        virtual                ~CTRY_Base();
+
+    protected:
 
         int gold;
         int population;
@@ -40,9 +42,9 @@ class CTRY_Base
         int grain;
         bool isAtWar;
 
+    //private:
         // Class constructor and destructor
                                 CTRY_Base();
-        virtual                ~CTRY_Base();
 };
 
 #endif

@@ -13,19 +13,18 @@ class CTRY_France:public CTRY_Base
 {
         public:
             //Accessor method for static instance of class
-            static CTRY_France&         getInstance();
-
+            static CTRY_France*         getInstance();
+ 
             //Public deconstructor
                                        ~CTRY_France();
 
         private:
             //Private constructor
                                         CTRY_France();
-                                        CTRY_France(CTRY_France const&){};
-            void                        operator=(CTRY_France const&){};
             
-            //static instance of class 
-            static CTRY_France*         classInstance;
+            static CTRY_France*         instance;
+            static bool                 instanceFlag;
+            
 };
 
 #endif

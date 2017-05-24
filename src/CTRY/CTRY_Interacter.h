@@ -29,24 +29,24 @@ struct CountryChangeResources
         int changeGold;
         int changeGrain;
         int changeLandSize;
-        int changePopulation
+        int changePopulation;
 };
 
 class CTRY_Interacter
 {
         public:
             //Public constructor and destructor
-                                CTRY_Interactor();
-                               ~CTRY_Interactor();
+                                CTRY_Interacter();
+            virtual            ~CTRY_Interacter();
 
             //Public methods for changing data models, change assumed +increase, -decrease
             //Returns bool true/false= success/failed operation
             bool                updateCountryResources(Country country, 
-                                                      CountryChangeResources changeResources);
+                                                      CountryChangeResources *changeResources);
             bool                updateCountryState(Country country, bool isAtWar);
 
         private:
-            CTRY_Base&          getChangedCountry(Country country);
+            CTRY_Base*          getChangedCountry(Country country);
 };
 
 #endif

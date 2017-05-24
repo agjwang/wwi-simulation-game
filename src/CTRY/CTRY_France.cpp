@@ -7,13 +7,18 @@
 
 #include "CTRY_France.h"
 
-CTRY_France& CTRY_France::getInstance()
+bool CTRY_France::instanceFlag = false;
+
+CTRY_France* CTRY_France::instance = 0;
+
+CTRY_France* CTRY_France::getInstance()
 {
-    if (!classInstance){
-        classInstance = new CTRY_France();
-        return &classInstance;
+    if(!instanceFlag){
+        instance = new CTRY_France();
+        instanceFlag = true;
+        return instance;
     } else{
-        return &classInstance;
+        return instance;
     }
 }
 
@@ -28,5 +33,5 @@ CTRY_France::CTRY_France()
 
 CTRY_France::~CTRY_France()
 {
-
+    instanceFlag = false;
 }

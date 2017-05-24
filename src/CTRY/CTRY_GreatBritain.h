@@ -13,18 +13,17 @@ class CTRY_GreatBritain:public CTRY_Base
 {
         public:
             //Accessor method for static instance of method
-            static CTRY_GreatBritain&   getInstance();
+            static CTRY_GreatBritain*   getInstance();
             
             //Public deconstructor
                                        ~CTRY_GreatBritain();
         private:
             //Private constructor
                                         CTRY_GreatBritain();
-                                        CTRY_GreatBritain(CTRY_GreatBritain const&){};
-            void                        operator=(CTRY_GreatBritain const&){};
-            
+
             //static instance
-            static CTRY_GreatBritain*   classInstance;
+            static CTRY_GreatBritain*   instance;
+            static bool                 instancFlag;
 };
 
 #endif

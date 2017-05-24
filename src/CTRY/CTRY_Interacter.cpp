@@ -20,24 +20,24 @@ CTRY_Interacter::~CTRY_Interacter()
 }
 
 bool CTRY_Interacter::updateCountryResources(Country country, 
-                                             CountryChangeResources changeResource)
+                                             CountryChangeResources *changeResource)
 {
-    if (!country || !changeResources) return false;
+    if (!country || !changeResource) return false;
     
-    CTRY_Base changeCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *changeCountry = CTRY_Interacter::getChangedCountry(country);
 
-    if (changeCountry == NULL) return false;
+    if (changeCountry == 0) return false;
 
-    if (changeCountry.getGold() + changeResource.changeGold >= 0 &&
-              changeCountry.getPopulation() + changeResource.changePopulation >= 0 &&
-              changeCountry.getLandSize() + changeResource.changeLandSize >= 0 &&
-              changeCountry.getGrain() + changeResource.changeGrain >= 0){
+    if (changeCountry->getGold() + changeResource->changeGold >= 0 &&
+              changeCountry->getPopulation() + changeResource->changePopulation >= 0 &&
+              changeCountry->getLandSize() + changeResource->changeLandSize >= 0 &&
+              changeCountry->getGrain() + changeResource->changeGrain >= 0){
 
-        changeCountry.changeGold(changeResource.changeGold);
-        changeCountry.changePopulation(changeResource.changePopulation);
-        changeCountry.changeLandSize(changeResource.changeLandSize);
-        changeCountry.changeGrain(changeResource.changeGrain);
-        return true
+        changeCountry->changeGold(changeResource->changeGold);
+        changeCountry->changePopulation(changeResource->changePopulation);
+        changeCountry->changeLandSize(changeResource->changeLandSize);
+        changeCountry->changeGrain(changeResource->changeGrain);
+        return true;
     } else{
         return false;
     }
@@ -45,17 +45,17 @@ bool CTRY_Interacter::updateCountryResources(Country country,
 
 bool CTRY_Interacter::updateCountryState(Country country, bool isAtWar)
 {
-    CTRY_Base changeCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *changeCountry = CTRY_Interacter::getChangedCountry(country);
     
     if (changeCountry){
-        changeCountry.setCountryIsAtWar(isAtWar);
+        changeCountry->setCountryIsAtWar(isAtWar);
         return true;
     } else{
         return false;
     }
 }
 
-CTRY_Base& CTRY_Interacter::getChangedCountry(Country country)
+CTRY_Base* CTRY_Interacter::getChangedCountry(Country country)
 {
     switch(country){
         case GREAT_BRITAIN:
@@ -63,14 +63,14 @@ CTRY_Base& CTRY_Interacter::getChangedCountry(Country country)
         case FRANCE:
             return CTRY_GreatBritain::getInstance();
         case RUSSIA:
-            return NULL;
+            return 0;
         case AUSTRIA_HUNGARY:
-            return NULL;
+            return 0;
         case ITALY:
-            return NULL;
+            return 0;
         case SERBIA:
-            return NULL;
+            return 0;
         default:
-            return NULL;
+            return 0;
     }
 }

@@ -7,13 +7,18 @@
 
 #include "CTRY_GreatBritain.h"
 
-CTRY_GreatBritain& CTRY_GreatBritain::getInstance()
+bool CTRY_GreatBritain::instanceFlag = false;
+
+CTRY_GreatBritain* CTRY_GreatBritain::instance = 0;
+
+CTRY_GreatBritain* CTRY_GreatBritain::getInstance()
 {
-    if (!classInstance){
-        classInstance = new CTRY_GreatBritain();
-        return &classInstance;
+    if (!instanceFlag){
+        instance = new CTRY_GreatBritain();
+        instanceFlag = true;
+        return instance;
     } else{
-        return &classInstance;
+        return instance;
     }
 }
 
@@ -28,5 +33,5 @@ CTRY_GreatBritain::CTRY_GreatBritain()
 
 CTRY_GreatBritain::~CTRY_GreatBritain()
 {
-
+    instanceFlag = false;
 }
