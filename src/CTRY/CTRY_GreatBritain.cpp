@@ -29,6 +29,7 @@ CTRY_GreatBritain::CTRY_GreatBritain()
     landSize = 210000;
     grain = 1000;
     isAtWar = false;
+    morale = 100;
 }
 
 CTRY_GreatBritain::~CTRY_GreatBritain()

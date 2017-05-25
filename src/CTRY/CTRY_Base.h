@@ -17,12 +17,14 @@ class CTRY_Base
         int                     getPopulation();
         int                     getLandSize();
         int                     getGrain();
+        int                     getMorale();
         bool                    getCountryIsAtWar();
 
         void                    setGold(int newGold);
         void                    setPopulation(int newPopulation);
         void                    setLandSize(int newLandSize);
         void                    setGrain(int newGrain);
+        void                    setMorale(int newMorale);
         void                    setCountryIsAtWar(bool newState);
 
         // Change parameter functions
@@ -31,6 +33,7 @@ class CTRY_Base
         bool                    changePopulation(int change);
         bool                    changeLandSize(int change);
         bool                    changeGrain(int change);
+        bool                    changeMorale(int change);
 
         virtual                ~CTRY_Base();
 
@@ -40,6 +43,7 @@ class CTRY_Base
         int population;
         int landSize;
         int grain;
+        int morale;
         bool isAtWar;
 
     //private:

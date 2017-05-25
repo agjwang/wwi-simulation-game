@@ -37,6 +37,7 @@ bool CTRY_Interacter::updateCountryResources(Country country,
         changeCountry->changePopulation(changeResource->changePopulation);
         changeCountry->changeLandSize(changeResource->changeLandSize);
         changeCountry->changeGrain(changeResource->changeGrain);
+        changeCountry->changeMorale(changeResource->changeMorale);
         return true;
     } else{
         return false;

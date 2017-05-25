@@ -12,17 +12,7 @@
 #define __CTRY_Interacter_h__
 
 #include "CTRY_Base.h"
-
-enum Country
-{
-        GREAT_BRITAIN,
-        FRANCE,
-        GERMANY,
-        RUSSIA,
-        AUSTRIA_HUNGARY,
-        ITALY,
-        SERBIA
-};
+#include "CTRY_Countries.h"
 
 struct CountryChangeResources
 {
@@ -30,6 +20,7 @@ struct CountryChangeResources
         int changeGrain;
         int changeLandSize;
         int changePopulation;
+        int changeMorale;
 };
 
 class CTRY_Interacter

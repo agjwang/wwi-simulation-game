@@ -29,6 +29,7 @@ CTRY_France::CTRY_France()
     landSize = 640000;
     grain = 1500;
     isAtWar = false;
+    morale = 100;
 }
 
 CTRY_France::~CTRY_France()

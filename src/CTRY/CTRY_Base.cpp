@@ -27,6 +27,11 @@ int CTRY_Base::getGrain()
     return grain;
 }
 
+int CTRY_Base::getMorale()
+{
+    return morale;
+}
+
 bool CTRY_Base::getCountryIsAtWar()
 {
     return isAtWar;
@@ -50,6 +55,11 @@ void CTRY_Base::setLandSize(int newLandSize)
 void CTRY_Base::setGrain(int newGrain)
 {
     grain = newGrain;
+}
+
+void CTRY_Base::setMorale(int newMorale)
+{
+    morale = newMorale;
 }
 
 void CTRY_Base::setCountryIsAtWar(bool newState)
@@ -94,6 +104,17 @@ bool CTRY_Base::changeGrain(int change)
         return true;
     } else{
         return false;
+    }
+}
+
+bool CTRY_Base::changeMorale(int change)
+{
+    morale += change;
+    if (morale < 0){
+        morale = 0;
+        return false;
+    } else{
+        return true;
     }
 }
 
