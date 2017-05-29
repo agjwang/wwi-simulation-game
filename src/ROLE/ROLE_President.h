@@ -34,7 +34,15 @@ class ROLE_President
         
         //Accessor methods for current budget
         Budget*                 getCurrentBudget();
-        void                    resetBudget(int newTotalBudget);
+        void                    resetBudget();
+        bool                    changeBudgetHomeFront(int change);
+        bool                    changeBudgetArmy(int change);
+        bool                    changeBudgetNavy(int change);
+        bool                    changeBudgetResearch(int change);
+
+        //Update information for role
+        void                    updateInformation(int newTotalBudget, 
+                                                  int newPopulation, int newMorale);
 
         //Mutators for surrender
         bool                    getWillSurrender();
@@ -42,6 +50,7 @@ class ROLE_President
 
     private:
         int totalBudget; //A portion of total gold of a country
+        int allocatedBudget; //The portion of totalBudget that has already been allocated
         int population;
         int morale;
         bool willSurrender;
