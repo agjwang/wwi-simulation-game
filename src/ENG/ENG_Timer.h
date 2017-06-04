@@ -36,7 +36,7 @@ class Timer
         double                   getElapsedTime();
 
         // Constants for updates per second and frames per second
-        const int                UPS = 30;
+        const int                UPS;
         double                   updateInterval;
 
         // Flag for when it is time to render
@@ -49,6 +49,6 @@ class Timer
         time_point<system_clock> prevLoopTime;
         time_point<system_clock> currLoopTime;
         
-}
+};
 
 #endif

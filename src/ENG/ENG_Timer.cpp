@@ -4,7 +4,12 @@
  * COMMENTS:
  */
 
-Timer::Timer() : accumulatedTime(0.0), elapsedTime(0.0),
+#include "ENG_Timer.h"
+
+#include <iostream>
+#include <thread>
+
+Timer::Timer() : accumulatedTime(0.0), elapsedTime(0.0), UPS(30),
     updateInterval(1.0 / UPS), isRenderTime(false)
 {
     prevLoopTime = system_clock::now();
@@ -25,10 +30,13 @@ bool Timer::getIsUpdateTime()
 {
     if (accumulatedTime >= updateInterval)
     {
-        accumulatedTime -= updateInterval;
+        while (accumulatedTime >= updateInterval)
+        {
+            accumulatedTime -= updateInterval;
+        }
+        isRenderTime = true;
         return true;
     }
-    isRenderTime = true;
     return false;
 }
 
@@ -46,6 +54,6 @@ double Timer::getElapsedTime()
 {
     currLoopTime = system_clock::now();
     duration<double> elapsed = currLoopTime - prevLoopTime;
-    prevLoopTime = system_clock::now();
+    prevLoopTime = currLoopTime;
     return elapsed.count();
 }
