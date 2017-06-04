@@ -6,41 +6,39 @@
 
 #include "ENG_Timer.h"
 
-#include <iostream>
-#include <thread>
-
-Timer::Timer() : accumulatedTime(0.0), elapsedTime(0.0), UPS(30),
+ENG_Timer::ENG_Timer() : accumulatedTime(0.0), elapsedTime(0.0), UPS(30),
     updateInterval(1.0 / UPS), isRenderTime(false)
+{
+}
+
+ENG_Timer::~ENG_Timer()
+{
+}
+
+void ENG_Timer::init()
 {
     prevLoopTime = system_clock::now();
     currLoopTime = system_clock::now();
 }
 
-Timer::~Timer()
-{
-}
-
-void Timer::updateTime()
+void ENG_Timer::updateTime()
 {
     elapsedTime = getElapsedTime();
     accumulatedTime += elapsedTime;
 }
 
-bool Timer::getIsUpdateTime()
+bool ENG_Timer::getIsUpdateTime()
 {
     if (accumulatedTime >= updateInterval)
     {
-        while (accumulatedTime >= updateInterval)
-        {
-            accumulatedTime -= updateInterval;
-        }
-        isRenderTime = true;
-        return true;
+        accumulatedTime -= updateInterval;
+        return false;
     }
-    return false;
+    isRenderTime = true;
+    return true;
 }
 
-bool Timer::getIsRenderTime()
+bool ENG_Timer::getIsRenderTime()
 {
     if (isRenderTime)
     {
@@ -50,10 +48,14 @@ bool Timer::getIsRenderTime()
     return false;
 }
 
-double Timer::getElapsedTime()
+double ENG_Timer::getElapsedTime()
 {
     currLoopTime = system_clock::now();
     duration<double> elapsed = currLoopTime - prevLoopTime;
     prevLoopTime = currLoopTime;
     return elapsed.count();
+}
+
+void ENG_Timer::cleanup()
+{
 }

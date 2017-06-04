@@ -12,13 +12,16 @@
 
 using namespace std::chrono;
 
-class Timer
+class ENG_Timer
 {
     public:
         
         // Class constructor and destructor
                                  Timer();
         virtual                 ~Timer();
+
+        void                     init();
+        void                     cleanup();
 
         // Updates the timer's internal accumulated and elapsed time
         // Called within the main game loop

@@ -32,7 +32,7 @@ class ENG_MainGameLoop
 
     private:
 
-        Timer                    timer;
+        ENG_Timer                timer;
         ENG_GameEngine           engine;
     
 }

@@ -7,7 +7,7 @@
 #ifndef __ENG_GameEngine_h__
 #define __ENG_GameEngine_h__
 
-class ENG_GameEngine
+class GameEngine
 {
     public:
        
