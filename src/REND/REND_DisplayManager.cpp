@@ -6,29 +6,29 @@
 
 #include "REND_DisplayManager.h"
 
-DisplayManager::DisplayManager(string title, int width, int height, bool vSync)
-    : window(new Window(title, width, height, vSync))
+REND_DisplayManager::REND_DisplayManager(string title, int width, int height)
+    : window(new Window(title, width, height))
 {
     input = new InputManager(*window);
 }
 
-DisplayManager::~DisplayManager()
+REND_DisplayManager::~REND_DisplayManager()
 {
 }
 
-void DisplayManager::init()
+void REND_DisplayManager::init()
 {
     input->init();
     window->init();
 }
 
-void DisplayManager::update()
+void REND_DisplayManager::update()
 {
     input->update();
     window->update();
 }
 
-void DisplayManager::cleanup()
+void REND_DisplayManager::cleanup()
 {
     input->cleanup();
     //window.cleanup();

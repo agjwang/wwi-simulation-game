@@ -13,14 +13,14 @@
 #include "REND_InputManager.h"
 
 
-class DisplayManager
+class REND_DisplayManager
 {
 
     public:
 
         // Class constructor and destructor
                                  DisplayManager(string title, int width,
-                                         int height, bool vSync);
+                                         int height);
         virtual                 ~DisplayManager();
 
         // Methods to set up and update display manager

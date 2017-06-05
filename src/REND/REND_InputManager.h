@@ -11,7 +11,7 @@
 
 #include "REND_Window.h"
 
-class InputManager
+class REND_InputManager
 {
 
     public:

@@ -6,26 +6,26 @@
 
 #include "REND_InputManager.h"
 
-InputManager::InputManager(Window window)
+REND_InputManager::REND_InputManager(Window window)
 {
     windowHandle = window.getWindowHandle();
 }
 
-InputManager::~InputManager()
+REND_InputManager::~REND_InputManager()
 {
 }
 
-void InputManager::init()
-{
-
-}
-
-void InputManager::update()
+void REND_InputManager::init()
 {
 
 }
 
-void InputManager::cleanup()
+void REND_InputManager::update()
+{
+
+}
+
+void REND_InputManager::cleanup()
 {
 }
 

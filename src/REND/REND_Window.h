@@ -12,14 +12,13 @@
 
 #include "../SYSUTIL/SYSUTIL_SystemIncludes.h"
 
-class Window
+class REND_Window 
 {
 
     public:
 
         // Class constructor and destructor
-                                 Window(string title, int width, int height,
-                                         bool vSync);
+                                 Window(string title, int width, int height)
 
         virtual                 ~Window();
 
@@ -27,6 +26,8 @@ class Window
         void                     init();
         
         void                     update();
+
+        void                     cleanup();
 
         bool                     isWindowCloseRequested()
                                     { return glfwWindowShouldClose(windowHandle); };
@@ -45,7 +46,6 @@ class Window
         int                      screenWidth;
         int                      screenHeight;
 
-        bool                     vSync;
         GLFWwindow              *windowHandle;
 };
 

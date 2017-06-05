@@ -6,16 +6,16 @@
 
 #include "REND_Window.h"
 
-Window::Window(string title, int width, int height, bool vSync) :
-    title(title), width(width), height(height), vSync(vSync), windowHandle(NULL)
+REND_Window::REND_Window(string title, int width, int height) :
+    title(title), width(width), height(height), windowHandle(NULL)
 {
 }
 
-Window::~Window()
+REND_Window::~REND_Window()
 {
 }
 
-void Window::init()
+void REND_Window::init()
 {
     glfwInit();
 
@@ -42,8 +42,10 @@ void Window::init()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void Window::update()
+void REND_Window::update()
 {
     glfwSwapBuffers(windowHandle);
     glfwPollEvents();
 }
+
+
