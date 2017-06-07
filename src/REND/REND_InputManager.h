@@ -35,8 +35,8 @@ class REND_InputManager
         };
 
         // Class constructor and destructor
-                                 InputManager(Window window);
-        virtual                 ~InputManager();
+                                 REND_InputManager(Window window);
+        virtual                 ~REND_InputManager();
 
         // Methods to set up and update input manager
         // Set up and maintain callback functions
