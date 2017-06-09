@@ -29,8 +29,12 @@ class ROLE_President
                                                 int population, int morale);
                                ~ROLE_President();
 
-        //Accessor method for which nation's PM this is
+        //Accessor methods
         Country                 getCountry();
+        int                     getTotalBudget();
+        int                     getAllocatedBudget();
+        int                     getPopulation();
+        int                     getMorale();
         
         //Accessor methods for current budget
         Budget*                 getCurrentBudget();

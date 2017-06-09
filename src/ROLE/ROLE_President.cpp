@@ -40,6 +40,26 @@ Country ROLE_President::getCountry()
     return nation;
 }
 
+int ROLE_President:;getTotalBudget()
+{
+    return totalBudget;
+}
+
+int ROLE_President::getAllocatedBudget()
+{
+    return allocatedBudget;
+}
+
+int ROLE_President::getPopulation()
+{
+    return population;
+}
+
+int ROLE_President::getMorale()
+{
+    return morale;
+}
+
 Budget* ROLE_President::getCurrentBudget()
 {
     return budget;
