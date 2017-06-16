@@ -37,6 +37,11 @@ bool CTRY_Base::getCountryIsAtWar()
     return isAtWar;
 }
 
+queue<message *>* CTRY_Base::getChatHistory()
+{
+    return chatHistory;
+}
+
 void CTRY_Base::setGold(int newGold)
 {
     gold = newGold;
@@ -65,6 +70,19 @@ void CTRY_Base::setMorale(int newMorale)
 void CTRY_Base::setCountryIsAtWar(bool newState)
 {
     isAtWar = newState;
+}
+
+void CTRY_Base::addMessageToChat(message *chatMessage)
+{
+    if (chatMessage) {
+        chatHistory->push(chatMessage);
+   
+    }
+    
+
+    if (chatHistory->size > 100) {
+        chatHistory->pop();
+    }
 }
 
 bool CTRY_Base::changeGold(int change)
@@ -118,6 +136,12 @@ bool CTRY_Base::changeMorale(int change)
     }
 }
 
+void CTRY_Base::resetChatHistory()
+{
+    delete chatHistory;
+    chatHistory = new queue<message *>;
+}
+
 CTRY_Base::CTRY_Base()
 {
     gold = 100;
@@ -125,9 +149,10 @@ CTRY_Base::CTRY_Base()
     landSize = 100;
     grain = 100;
     isAtWar = false;
+    chatHistory = new queue<message *>;
 }
 
 CTRY_Base::~CTRY_Base()
 {
-
+    delete chatHistory;
 }

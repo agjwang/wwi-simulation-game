@@ -36,6 +36,10 @@ class CTRY_Interacter
                                                       CountryChangeResources *changeResources);
             bool                updateCountryState(Country country, bool isAtWar);
 
+            queue<message *>*   getChatHistory(Country country);
+            void                clearChatHistory(Country country);
+            void                addMessage(Country country, message *chatMessage);
+
         private:
             CTRY_Base*          getChangedCountry(Country country);
 };

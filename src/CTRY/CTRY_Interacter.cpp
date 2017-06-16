@@ -31,7 +31,7 @@ bool CTRY_Interacter::updateCountryResources(Country country,
     if (changeCountry->getGold() + changeResource->changeGold >= 0 &&
               changeCountry->getPopulation() + changeResource->changePopulation >= 0 &&
               changeCountry->getLandSize() + changeResource->changeLandSize >= 0 &&
-              changeCountry->getGrain() + changeResource->changeGrain >= 0){
+              changeCountry->getGrain() + changeResource->changeGrain >= 0) {
 
         changeCountry->changeGold(changeResource->changeGold);
         changeCountry->changePopulation(changeResource->changePopulation);
@@ -39,7 +39,7 @@ bool CTRY_Interacter::updateCountryResources(Country country,
         changeCountry->changeGrain(changeResource->changeGrain);
         changeCountry->changeMorale(changeResource->changeMorale);
         return true;
-    } else{
+    } else {
         return false;
     }
 }
@@ -48,11 +48,40 @@ bool CTRY_Interacter::updateCountryState(Country country, bool isAtWar)
 {
     CTRY_Base *changeCountry = CTRY_Interacter::getChangedCountry(country);
     
-    if (changeCountry){
+    if (changeCountry) {
         changeCountry->setCountryIsAtWar(isAtWar);
         return true;
     } else{
         return false;
+    }
+}
+
+queue<message *>* CTRY_Interacter::getChatHistory(Country countr)
+{
+    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+
+    if (targetCountry) {
+        return targetCountry->getChatHistory;
+    } else {
+        return 0;
+    }
+}
+
+void CTRY_Interacter::clearChatHistory(Country country)
+{
+    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+
+    if (targetCountry) {
+        targetCountry->resetChatHistory();
+    }
+}
+
+void CTRY_Interacter::addMessage(Country country, message *chatMessage)
+{
+    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+
+    if (targetCountry && chatMessage){
+        targetCountry->addMessageToChat(chatMessage);
     }
 }
 

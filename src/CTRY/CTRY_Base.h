@@ -8,6 +8,15 @@
 #ifndef __CTRY_Base_h__
 #define __CTRY_Base_h__
 
+#include <queue>
+#include <string>
+
+struct message {
+    string *sender;
+    string *message;
+    int time;
+}
+
 class CTRY_Base
 {
     public:
@@ -19,6 +28,7 @@ class CTRY_Base
         int                     getGrain();
         int                     getMorale();
         bool                    getCountryIsAtWar();
+        queue<message *>*       getChatHistory();
 
         void                    setGold(int newGold);
         void                    setPopulation(int newPopulation);
@@ -26,6 +36,7 @@ class CTRY_Base
         void                    setGrain(int newGrain);
         void                    setMorale(int newMorale);
         void                    setCountryIsAtWar(bool newState);
+        void                    addMessageToChat(message *chatMessage);
 
         // Change parameter functions
         // Returns true if successful and false without changing parameters if failed
@@ -34,6 +45,8 @@ class CTRY_Base
         bool                    changeLandSize(int change);
         bool                    changeGrain(int change);
         bool                    changeMorale(int change);
+        
+        void                    resetChatHistory();
 
         virtual                ~CTRY_Base();
 
@@ -45,6 +58,9 @@ class CTRY_Base
         int grain;
         int morale;
         bool isAtWar;
+
+        //Maximum of 100 messages stored per country at a time
+        queue<message *> *chatHistory;
 
     //private:
         // Class constructor and destructor
