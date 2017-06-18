@@ -47,7 +47,7 @@ class REND_InputManager
         void                     cleanup();
 
 
-        void                     getMouseCoords(int &xpos, int &ypos);
+        void                     getMouseCoords(double &xpos, double &ypos);
 
         MouseButton              getMouseButton();
                                 { return mouseButton; }
