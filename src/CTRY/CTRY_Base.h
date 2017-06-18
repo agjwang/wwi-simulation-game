@@ -10,12 +10,7 @@
 
 #include <queue>
 #include <string>
-
-struct message {
-    string *sender;
-    string *message;
-    int time;
-}
+#include "CTRY_Message.h"
 
 class CTRY_Base
 {
@@ -28,7 +23,7 @@ class CTRY_Base
         int                     getGrain();
         int                     getMorale();
         bool                    getCountryIsAtWar();
-        queue<message *>*       getChatHistory();
+        queue<Message *>*       getChatHistory();
 
         void                    setGold(int newGold);
         void                    setPopulation(int newPopulation);
@@ -36,7 +31,7 @@ class CTRY_Base
         void                    setGrain(int newGrain);
         void                    setMorale(int newMorale);
         void                    setCountryIsAtWar(bool newState);
-        void                    addMessageToChat(message *chatMessage);
+        void                    addMessageToChat(Message *chatMessage);
 
         // Change parameter functions
         // Returns true if successful and false without changing parameters if failed
@@ -60,7 +55,7 @@ class CTRY_Base
         bool isAtWar;
 
         //Maximum of 100 messages stored per country at a time
-        queue<message *> *chatHistory;
+        queue<Message *> *chatHistory;
 
     //private:
         // Class constructor and destructor

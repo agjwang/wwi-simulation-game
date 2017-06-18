@@ -5,26 +5,26 @@
  *
  */
 
-#include "CTRY_Interacter.h"
+#include "CTRY_Interactor.h"
 #include "CTRY_GreatBritain.h"
 #include "CTRY_France.h"
 
-CTRY_Interacter::CTRY_Interacter()
+CTRY_Interactor::CTRY_Interactor()
 {
     //Constructor if needed
 }
 
-CTRY_Interacter::~CTRY_Interacter()
+CTRY_Interactor::~CTRY_Interactor()
 {
     //Destructor if needed
 }
 
-bool CTRY_Interacter::updateCountryResources(Country country, 
+bool CTRY_Interactor::updateCountryResources(Country country, 
                                              CountryChangeResources *changeResource)
 {
     if (!country || !changeResource) return false;
     
-    CTRY_Base *changeCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *changeCountry = CTRY_Interactor::getChangedCountry(country);
 
     if (changeCountry == 0) return false;
 
@@ -44,9 +44,9 @@ bool CTRY_Interacter::updateCountryResources(Country country,
     }
 }
 
-bool CTRY_Interacter::updateCountryState(Country country, bool isAtWar)
+bool CTRY_Interactor::updateCountryState(Country country, bool isAtWar)
 {
-    CTRY_Base *changeCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *changeCountry = CTRY_Interactor::getChangedCountry(country);
     
     if (changeCountry) {
         changeCountry->setCountryIsAtWar(isAtWar);
@@ -56,9 +56,9 @@ bool CTRY_Interacter::updateCountryState(Country country, bool isAtWar)
     }
 }
 
-queue<message *>* CTRY_Interacter::getChatHistory(Country countr)
+queue<Message *>* CTRY_Interactor::getChatHistory(Country countr)
 {
-    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *targetCountry = CTRY_Interactor::getChangedCountry(country);
 
     if (targetCountry) {
         return targetCountry->getChatHistory;
@@ -67,25 +67,25 @@ queue<message *>* CTRY_Interacter::getChatHistory(Country countr)
     }
 }
 
-void CTRY_Interacter::clearChatHistory(Country country)
+void CTRY_Interactor::clearChatHistory(Country country)
 {
-    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *targetCountry = CTRY_Interactor::getChangedCountry(country);
 
     if (targetCountry) {
         targetCountry->resetChatHistory();
     }
 }
 
-void CTRY_Interacter::addMessage(Country country, message *chatMessage)
+void CTRY_Interactor::addMessage(Country country, Message *chatMessage)
 {
-    CTRY_Base *targetCountry = CTRY_Interacter::getChangedCountry(country);
+    CTRY_Base *targetCountry = CTRY_Interactor::getChangedCountry(country);
 
     if (targetCountry && chatMessage){
         targetCountry->addMessageToChat(chatMessage);
     }
 }
 
-CTRY_Base* CTRY_Interacter::getChangedCountry(Country country)
+CTRY_Base* CTRY_Interactor::getChangedCountry(Country country)
 {
     switch(country){
         case GREAT_BRITAIN:

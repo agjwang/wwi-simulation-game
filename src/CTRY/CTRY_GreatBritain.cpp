@@ -30,7 +30,7 @@ CTRY_GreatBritain::CTRY_GreatBritain()
     grain = 1000;
     isAtWar = false;
     morale = 100;
-    chatHistory = new queue<message *>;
+    chatHistory = new queue<Message *>;
 }
 
 CTRY_GreatBritain::~CTRY_GreatBritain()
