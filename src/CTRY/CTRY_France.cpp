@@ -30,9 +30,11 @@ CTRY_France::CTRY_France()
     grain = 1500;
     isAtWar = false;
     morale = 100;
+    chatHistory = new queue<Message *>;
 }
 
 CTRY_France::~CTRY_France()
 {
     instanceFlag = false;
+    delete chatHistory;
 }
