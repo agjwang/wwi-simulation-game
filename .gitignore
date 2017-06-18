@@ -31,7 +31,19 @@
 *.out
 *.app
 
-# Temporary files
+# VIM: Temperory files
 *~
-~.swp
-~.swo
+
+# VIM: Swap-files
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# VIM: Commands :cs, :ctags
+tags
+cscope.*
+
+# VIM session
+Session.vim
+
+# VIM: netrw.vim: Network oriented reading, writing, browsing (eg: ftp scp) 
+.netrwhist
