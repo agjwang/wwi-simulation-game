@@ -1,13 +1,13 @@
 /*
- * NAME: ROLE_FieldMarshal.cpp
+ * NAME: ROLE_ArmyGeneral.cpp
  *
- * COMMENT: Implementation for field mashal
+ * COMMENT: Implementation for Army General
  *
  */
 
-#include "ROLE_FieldMarshal.h"
+#include "ROLE_ArmyGeneral.h"
 
-ROLE_FieldMarshal::ROLE_FieldMarshal()
+ROLE_ArmyGeneral::ROLE_ArmyGeneral()
 {
     nation = 0;
     totalArmySize = 0;
@@ -16,7 +16,7 @@ ROLE_FieldMarshal::ROLE_FieldMarshal()
     armies = 0;
 }
 
-ROLE_FieldMarshal::ROLE_FieldMarshal(Country country, int armySize, int resources, int morale)
+ROLE_ArmyGeneral::ROLE_ArmyGeneral(Country country, int armySize, int resources, int morale)
 {
     nation = country;
     totalArmySize = army;
@@ -31,7 +31,7 @@ ROLE_FieldMarshal::ROLE_FieldMarshal(Country country, int armySize, int resource
     armies = {division};
 }
 
-ROLE_FieldMarshal::~ROLE_FieldMarshal()
+ROLE_ArmyGeneral::~ROLE_ArmyGeneral()
 {
     for (ArmyDivision *division : armies) {
         delete divison;
@@ -40,47 +40,47 @@ ROLE_FieldMarshal::~ROLE_FieldMarshal()
     delete armies;
 }
 
-void ROLE_FieldMarshal::setArmySize(int newArmySize)
+void ROLE_ArmyGeneral::setArmySize(int newArmySize)
 {
     totalArmySize = newArmySize;
 }
 
-void ROLE_FieldMarshal::setResources(int newResources)
+void ROLE_ArmyGeneral::setResources(int newResources)
 {
     resources = newResources;
 }
 
-void ROLE_FieldMarshal::setMorale(int newMorale)
+void ROLE_ArmyGeneral::setMorale(int newMorale)
 {
     morale = newMorale;
 }
 
-vector<*ArmyDivision> ROLE_FieldMarshal::getArmyDivision()
+vector<*ArmyDivision> ROLE_ArmyGeneral::getArmyDivision()
 {
     return armies;
 }
 
-int ROLE_FieldMarshal::getArmySize()
+int ROLE_ArmyGeneral::getArmySize()
 {
     return totalArmySize;
 }
 
-int ROLE_FieldMarshal::getResources()
+int ROLE_ArmyGeneral::getResources()
 {
     return resources;
 }
 
-int ROLE_FieldMarshal::getMorale()
+int ROLE_ArmyGeneral::getMorale()
 {
     return morale;
 }
 
-Country ROLE_FieldMarshal::getCountry()
+Country ROLE_ArmyGeneral::getCountry()
 {
     return nation;
 }
 
-void ROLE_FieldMarshal::createArmyDivision(string name)
+void ROLE_ArmyGeneral::createArmyDivision(string name)
 {
     ArmyDivision *newDivison = new ArmyDivison;
     newDivision->divisionName = name;
@@ -90,7 +90,7 @@ void ROLE_FieldMarshal::createArmyDivision(string name)
     armies.push_back(newDivision);
 }
 
-bool ROLE_FieldMarshal::transferSoldiers(string fromDivision, string toDivision, int numSoldiers)
+bool ROLE_ArmyGeneral::transferSoldiers(string fromDivision, string toDivision, int numSoldiers)
 {
     ArmyDivision *formerDivision = 0;
     ArmyDivision *nextDivison = 0;
@@ -120,7 +120,7 @@ bool ROLE_FieldMarshal::transferSoldiers(string fromDivision, string toDivision,
     }
 }
 
-void ROLE_FieldMarshal::resetArmyDivisions()
+void ROLE_ArmyGeneral::resetArmyDivisions()
 {
     for (ArmyDivision *division : armies) {
         delete division;
@@ -135,7 +135,7 @@ void ROLE_FieldMarshal::resetArmyDivisions()
     armies = {firstDivision};
 }
 
-void ROLE_FieldMarshal::setActionForArmyDivision(string armyDivisionName, ArmyAction action)
+void ROLE_ArmyGeneral::setActionForArmyDivision(string armyDivisionName, ArmyAction action)
 {
     ArmyDivision *currentDivision = 0;
 
@@ -151,7 +151,7 @@ void ROLE_FieldMarshal::setActionForArmyDivision(string armyDivisionName, ArmyAc
     }
 }
 
-void ROLE_FieldMarshal::updateInformation(int newTotalArmySize, int newResources, int newMorale, 
+void ROLE_ArmyGeneral::updateInformation(int newTotalArmySize, int newResources, int newMorale, 
                                                 vector<*ArmyDivision> updatedDivisions)
 {
     totalArmySize = newTotalArmySize;

@@ -17,8 +17,8 @@ class ENG_Timer
     public:
         
         // Class constructor and destructor
-                                 Timer();
-        virtual                 ~Timer();
+                                 ENG_Timer();
+        virtual                 ~ENG_Timer();
 
         void                     init();
         void                     cleanup();

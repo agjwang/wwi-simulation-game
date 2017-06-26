@@ -1,12 +1,12 @@
 /*
- * NAME: ROLE_FieldMarshal.h
+ * NAME: ROLE_ArmyGeneral.h
  *
- * COMMENT: Role file for Field Marshal
+ * COMMENT: Role file for Army General: shows the data they can see
  *
  */
 
-#ifndef __ROLE_FieldMarshal_h__
-#define __ROLE_FieldMarshal_h__
+#ifndef __ROLE_ArmyGeneral_h__
+#define __ROLE_ArmyGeneral_h__
 
 #include "./CTRY/CTRY_Countries.h"
 #include <string>
@@ -29,13 +29,13 @@ struct ArmyDivision
     ArmyAction action;
 };
 
-class ROLE_FieldMarshal
+class ROLE_ArmyGeneral
 {
     public:
-                                ROLE_FieldMarshal();
-                                ROLE_FieldMarshal(Country country, int armySize, int resources,
+                                ROLE_ArmyGeneral();
+                                ROLE_ArmyGeneral(Country country, int armySize, int resources,
                                                    int morale);
-                               ~ROLE_FieldMarshal();
+                               ~ROLE_ArmyGeneral();
         
         //Accessor methods
         void                    setArmySize(int newArmySize);

@@ -55,7 +55,7 @@ void ENG_MainGameLoop::update()
     engine.update();
 }
 
-void ENG_MainGameLoop:render()
+void ENG_MainGameLoop::render()
 {
     // TODO
 }
